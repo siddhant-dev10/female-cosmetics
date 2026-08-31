@@ -1,0 +1,9 @@
+node_modules
+.next
+.next-before-clean
+out
+.env*
+!.env.example
+*.log
+.DS_Store
+*.tsbuildinfo

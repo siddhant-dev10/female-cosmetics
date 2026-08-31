@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "DM Sans";
+  --font-display: "Playfair Display";
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: auto; background: #08070b; }
+body { margin: 0; background: #08070b; color: #f7f5fa; font-family: var(--font-sans), Arial, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body::selection { background: #a875ff; color: #08070b; }
+button, a, input, select { -webkit-tap-highlight-color: transparent; }
+button, a { outline-offset: 4px; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid #a875ff; outline-offset: 4px; }
+img { max-width: 100%; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #08070b; }
+::-webkit-scrollbar-thumb { background: #342847; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #6849a5; }
+
+.site-header { transform: translateZ(0); }
+.font-display { font-family: var(--font-display), Georgia, serif; }
+[data-reveal] { will-change: transform, opacity; }
+
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes pulse-ring { 0%, 100% { transform: scale(.95); opacity: .55; } 50% { transform: scale(1.08); opacity: 1; } }
+.pulse-ring { animation: pulse-ring 3s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
